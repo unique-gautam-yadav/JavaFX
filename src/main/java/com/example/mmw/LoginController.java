@@ -10,7 +10,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.*;
@@ -28,7 +27,8 @@ public class LoginController {
 
     @FXML
     private Text status;
-
+    public static String FulName;
+    public static String Uname;
     @FXML
     private TextField un;
     Stage stage;
@@ -39,7 +39,8 @@ public class LoginController {
     }
 
     @FXML
-    void logIn(ActionEvent event) {
+    void logIn(ActionEvent event) throws IOException{
+        System.out.println("Login Button Pressed");
         String user = un.getText();
         String password = pa.getText();
         final String url = "jdbc:mysql://localhost:3306/";
@@ -49,14 +50,23 @@ public class LoginController {
             Connection con = DriverManager.getConnection(url, u, pas);
             Statement stmt = con.createStatement();
             String sql = "select count(*) as Name from ims.user where uname='"+user+"' && pass = '"+password+"'";
-            String sql2 = "select Name from ims.user where uname='"+user+"' && pass = '"+password+"'";
+            String sql2 = "select Name, uname from ims.user where uname='"+user+"' && pass = '"+password+"'";
             ResultSet set = stmt.executeQuery(sql);
             set.next();
             int no = set.getInt("Name");
             if (no > 0){
                 ResultSet set2 = stmt.executeQuery(sql2);
                 set2.next();
-                String userName = set2.getString("Name");
+                FulName = set2.getString("Name");
+                Uname = set2.getString("uname");
+                stage = (Stage) un.getScene().getWindow();
+                stage.close();
+                System.out.println("Display Closed");
+                FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("MainView.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+                stage.setResizable(false);
+                stage.setScene(scene);
+                stage.show();
             }
             else{
                 status.setText("* username password mismatched !!");

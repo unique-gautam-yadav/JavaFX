@@ -58,13 +58,13 @@
                   <Image url="@user-plus.png" />
                </image>
             </ImageView>
-            <PasswordField fx:id="pa" layoutX="109.0" layoutY="318.0" prefHeight="27.0" prefWidth="221.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
+            <TextField fx:id="fullName" layoutX="113.0" layoutY="250.0" prefHeight="27.0" prefWidth="221.0" promptText="Full Name" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
             <TextField fx:id="un" layoutX="109.0" layoutY="285.0" prefHeight="27.0" prefWidth="221.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
+            <PasswordField fx:id="pa" layoutX="109.0" layoutY="318.0" prefHeight="27.0" prefWidth="221.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
+            <PasswordField fx:id="rePa" layoutX="109.0" layoutY="355.0" prefHeight="27.0" prefWidth="221.0" promptText="Retype Password" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
             <Button fx:id="btn_signup" layoutX="179.0" layoutY="430.0" mnemonicParsing="false" onAction="#signup" prefHeight="40.0" prefWidth="76.0" style="-fx-background-color: fde4c3;" text="Sign Up" />
             <Hyperlink fx:id="link" layoutX="261.0" layoutY="472.0" onAction="#openLogin" style="-fx-font-weight: bold;" text="Log In." />
             <Text layoutX="130.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account, " />
-            <TextField fx:id="fullName" layoutX="113.0" layoutY="250.0" prefHeight="27.0" prefWidth="221.0" promptText="Full Name" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
-            <PasswordField fx:id="rePa" layoutX="109.0" layoutY="355.0" prefHeight="27.0" prefWidth="221.0" promptText="Retype Password" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" styleClass="helo" />
             <Text fx:id="status" fill="RED" layoutX="150.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" />
          </children>
       </AnchorPane>
