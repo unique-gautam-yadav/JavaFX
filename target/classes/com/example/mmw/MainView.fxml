@@ -19,9 +19,9 @@
                   <Font name="Bradley Hand ITC" size="57.0" />
                </font>
             </Text>
-            <Text fill="#ffd9a8" layoutX="205.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage My Wallet">
+            <Text fill="#ffd9a8" layoutX="75.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Management System">
                <font>
-                  <Font size="50.0" />
+                  <Font size="40.0" />
                </font>
             </Text>
             <Button fx:id="exit" layoutX="639.0" layoutY="-2.0" mnemonicParsing="false" onAction="#logout" prefHeight="67.0" prefWidth="54.0" style="-fx-background-color: transparent;">
@@ -47,12 +47,12 @@
       <AnchorPane layoutY="125.0" prefHeight="380.0" prefWidth="700.0" style="-fx-background-color: #1C1C1C;">
          <children>
             <TableView fx:id="data" prefHeight="324.0" prefWidth="700.0" style="-fx-background-color: white;">
-              <columns>
-                <TableColumn fx:id="sr" prefWidth="75.0" styleClass="cont" text="Serial No." />
-                <TableColumn fx:id="title" prefWidth="190.0" styleClass="cont" text="Title" />
+               <columns>
+                  <TableColumn fx:id="sr" prefWidth="75.0" styleClass="cont" text="Serial No." />
+                  <TableColumn fx:id="title" prefWidth="190.0" styleClass="cont" text="Title" />
                   <TableColumn fx:id="desc" prefWidth="348.0" styleClass="cont" text="Description" />
                   <TableColumn fx:id="amount" prefWidth="86.0" styleClass="cont" text="Amout" />
-              </columns>
+               </columns>
             </TableView>
             <TextField fx:id="in_title" layoutX="19.0" layoutY="338.0" prefHeight="27.0" prefWidth="175.0" promptText="Title" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" />
             <TextField fx:id="in_decs" layoutX="219.0" layoutY="337.0" prefHeight="27.0" prefWidth="216.0" promptText="Description" style="-fx-background-color: transparent; -fx-border-color: ffe6bc; -fx-border-width: 0px 0px 2px 0px; -fx-text-inner-color: ffe6bc;" />

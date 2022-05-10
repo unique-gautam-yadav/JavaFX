@@ -67,7 +67,6 @@ public class MainView implements Initializable {
             num += 1;
             String sql = "insert into ims.data values ("+num+", '"+user+"', '"+tit+"', '"+decript+"', '"+amt+"')";
             stmt.execute(sql);
-            System.out.println("Query = "+sql);
             in_title.setText("");
             in_amout.setText("");
             in_decs.setText("");
@@ -82,7 +81,6 @@ public class MainView implements Initializable {
     void logout(ActionEvent event) throws IOException {
         Stage stage = (Stage) exit.getScene().getWindow();
         stage.close();
-        System.out.println("Loggin out !!");
         FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
         stage.setResizable(false);
@@ -99,7 +97,6 @@ public class MainView implements Initializable {
         amount.setCellValueFactory(new PropertyValueFactory<DatafromDatabase, String>("amount"));
     }
     public void fetchAll(){
-        System.out.println("fetchall called!!");
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "2580");
             Statement stmt = conn.createStatement();
@@ -114,7 +111,6 @@ public class MainView implements Initializable {
                 data.setItems(null);
                 data.setItems(list);
                 data.getItems().add(item);
-                System.out.println(nn+"  "+t+"  "+d+"  "+a);
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -126,7 +122,6 @@ public class MainView implements Initializable {
         String p =  text_welcome.getText();
         String af = p + ", " + LoginController.FulName;
         text_welcome.setText(af);
-        System.out.println(af);
         btn_reload.setVisible(false);
     }
 }
